@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Noura Alsharif Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: single readable column, one project per section, screenshots in a responsive grid */
+:root{
+  --bg:#f6f8f8; --surface:#ffffff; --fg:#14262b; --muted:#566a70; --line:#d8e2e4; --accent:#0b6e72; --accent-soft:#dcefef; --code:#eef3f4;
+  --font-display:'Space Grotesk','Segoe UI',Arial,sans-serif; --font-body:'Inter','Segoe UI',Arial,sans-serif; --font-mono:ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1b1e;--surface:#162529;--fg:#e6eff0;--muted:#9bb0b4;--line:#27393d;--accent:#5fc4c8;--accent-soft:#17383b;--code:#0c1618;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1b1e;--surface:#162529;--fg:#e6eff0;--muted:#9bb0b4;--line:#27393d;--accent:#5fc4c8;--accent-soft:#17383b;--code:#0c1618;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.6;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(28px,5vw,40px)}
+h2{font-size:clamp(22px,3.5vw,28px)}
+h3{font-size:16px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-family:var(--font-body);font-weight:600}
+p{margin:0}
+header{display:flex;flex-direction:column;gap:12px}
+header p{color:var(--muted);max-width:62ch}
+nav{display:flex;flex-wrap:wrap;gap:8px}
+nav a{border:1px solid var(--line);background:var(--surface);color:var(--fg);text-decoration:none;padding:6px 14px;border-radius:999px;font-size:14px;font-weight:500}
+nav a:hover,nav a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+section{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(18px,4vw,32px);display:flex;flex-direction:column;gap:20px;scroll-margin-top:16px}
+section:target{border-color:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:600;padding:2px 10px;border-radius:6px}
+.block{display:flex;flex-direction:column;gap:6px;min-width:0}
+.block ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px}
+figure{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}
+figcaption{font-size:13px;color:var(--muted)}
+pre{background:var(--code);border:1px solid var(--line);border-radius:6px;padding:14px;margin:0;overflow-x:auto;font:13px/1.5 var(--font-mono)}
+footer{color:var(--muted);font-size:14px}
+html{color-scheme:light dark}body{margin:0}img{max-width:100%}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Noura Alsharif</h1>
+  <p>Computer Science student at Umm Al-Qura University, expected graduation 2028. These are the three team projects listed on my CV: what each one does, my part in it, and screenshots of the running work.</p>
+  <nav aria-label="Projects">
+    <a href="#todo-list-app">To-Do List App</a>
+    <a href="#mini-tech-store">Mini Tech Store</a>
+    <a href="#hotel-booking-system">Hotel Booking System</a>
+    <a href="#certificates">Certificates</a>
+  </nav>
+</header>
+
+<section id="todo-list-app">
+  <div class="block"><h2>To-Do List App</h2><div class="meta"><span class="tag">Java</span><span class="tag">Swing GUI</span><span class="tag">JDBC</span><span class="tag">SQL</span><span class="tag">Agile</span></div></div>
+  <p>A desktop app for managing daily tasks. A user logs in with a name, then adds tasks with due dates, marks them done, deletes or reschedules them, and searches by title, status or date. Tasks are stored in a relational database with a users table and a tasks table linked by a foreign key.</p>
+  <div class="block"><h3>My part</h3><ul>
+    <li>Wrote the User and Task entity classes.</li>
+    <li>Built the user registration feature.</li>
+    <li>Built task rescheduling with a date picker.</li>
+    <li>Worked in four 6-day sprints with a team of four, and helped with GUI fixes and input validation in the last sprint.</li></ul></div>
+  <div class="shots">
+    <figure><img src="img/todo-login.jpg" alt="Login window asking for a name" loading="lazy"><figcaption>Login window</figcaption></figure>
+    <figure><img src="img/todo-tasks.jpg" alt="Main window with the task list" loading="lazy"><figcaption>Main window with add, done, delete and reschedule</figcaption></figure>
+    <figure><img src="img/todo-search.jpg" alt="Searching tasks by title" loading="lazy"><figcaption>Search by title, status or due date</figcaption></figure>
+    <figure><img src="img/todo-arch.jpg" alt="Front end, back end and database diagram" loading="lazy"><figcaption>Three-layer architecture</figcaption></figure>
+  </div>
+  <div class="block"><h3>Database code (team code, prepared statements)</h3>
+<pre>String sql = "UPDATE tasks SET dueDate = ? WHERE taskID = ?";
+try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+    pstmt.setDate(1, new java.sql.Date(newDueDate.getTime()));
+    pstmt.setString(2, taskID);
+    pstmt.executeUpdate();
+}</pre></div>
+</section>
+
+<section id="mini-tech-store">
+  <div class="block"><h2>Mini Tech Store</h2><div class="meta"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span></div></div>
+  <p>A small online store for tech products. Visitors browse a product list pulled from the database, search by name and open a details page. An admin page adds, edits and deletes products. The home page has a JavaScript slideshow.</p>
+  <div class="block"><h3>My part</h3><ul>
+    <li>Designed the Contact and About pages.</li>
+    <li>Added JavaScript validation to the contact form (required fields and email format).</li>
+    <li>Helped style the site with CSS.</li>
+    <li>Tested and fixed bugs with a team of five.</li></ul></div>
+  <div class="shots">
+    <figure><img src="img/store-home.jpg" alt="Store home page with banner and slideshow" loading="lazy"><figcaption>Home page</figcaption></figure>
+    <figure><img src="img/store-products.jpg" alt="Product list with search box" loading="lazy"><figcaption>Products page with search</figcaption></figure>
+    <figure><img src="img/store-admin.jpg" alt="Admin dashboard table of products" loading="lazy"><figcaption>Admin dashboard</figcaption></figure>
+    <figure><img src="img/store-contact.jpg" alt="Contact form" loading="lazy"><figcaption>Contact page (my work)</figcaption></figure>
+    <figure><img src="img/store-about.jpg" alt="About us page" loading="lazy"><figcaption>About page (my work)</figcaption></figure>
+  </div>
+</section>
+
+<section id="hotel-booking-system">
+  <div class="block"><h2>Hotel Booking System</h2><div class="meta"><span class="tag">MySQL</span><span class="tag">SQL</span><span class="tag">ER Design</span></div></div>
+  <p>A relational database for hotel room reservations. It stores rooms, guests and bookings, and uses foreign keys with cascading deletes to keep the data consistent. The project includes the ER diagram, table definitions, sample data and analysis queries.</p>
+  <div class="block"><h3>My part</h3><ul>
+    <li>Contributed to the team's schema and ER design (team of five).</li>
+    <li>Wrote queries using RIGHT JOIN across three tables and nested subqueries.</li></ul></div>
+  <div class="shots">
+    <figure><img src="img/hotel-erd.jpg" alt="Entity relationship diagram of rooms, guests and bookings" loading="lazy"><figcaption>Entity relationship diagram</figcaption></figure>
+    <figure><img src="img/hotel-join.jpg" alt="RIGHT JOIN query and its result" loading="lazy"><figcaption>RIGHT JOIN: every guest with room type and check-in date</figcaption></figure>
+    <figure><img src="img/hotel-subquery.jpg" alt="Nested subquery and its result" loading="lazy"><figcaption>Nested subquery: rooms booked by one guest</figcaption></figure>
+  </div>
+<pre>SELECT g.name AS guest_name, r.room_type, b.check_in_date
+FROM Rooms r
+RIGHT JOIN Bookings b ON r.room_id = b.room_id
+RIGHT JOIN Guests g ON b.guest_id = g.guest_id;</pre>
+</section>
+<section id="certificates">
+  <div class="block"><h2>Certificates</h2></div>
+  <p>Online course completion certificates issued by Satr (Tuwaiq Academy), 3 January 2026.</p>
+  <div class="shots">
+    <figure><img src="img/cert-bootstrap.jpg" alt="Satr course completion certificate for Bootstrap" loading="lazy"><figcaption>Bootstrap, intermediate level, 1 hour</figcaption></figure>
+    <figure><img src="img/cert-laravel.jpg" alt="Satr course completion certificate for Introduction to Laravel" loading="lazy"><figcaption>Introduction to Laravel, beginner level, 5 hours</figcaption></figure>
+  </div>
+</section>
+<footer>Umm Al-Qura University, Makkah. Course projects completed as part of team work.</footer>
+</div>
+
+</body>
+</html>
